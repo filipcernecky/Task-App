@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F4F4F4">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar_task_add"
+        android:layout_alignParentTop="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bggradient"
+        android:minHeight="?attr/actionBarSize"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" >
+
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="198dp"
+            android:background="@drawable/bggradient"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/toolbar_task_add_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="0dp"
+                android:gravity="center_vertical|start"
+                android:layout_marginBottom="40dp"
+                android:textSize="26sp"
+                android:textColor="#FFF"
+                android:paddingLeft="16dp"
+                android:paddingRight="4dp"
+                android:text="Create new Task"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+    </android.support.v7.widget.Toolbar>
+
+    <LinearLayout
+        android:id="@+id/inputview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="-90dp"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar_task_add"
+        android:background="@drawable/bgitemview"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:paddingBottom="10dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/addtitle"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Add Title"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/task_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:hint="title"
+            android:background="@drawable/bgitemtask"
+            android:padding="12dp"
+            android:ems="10"
+            android:singleLine="true"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#666666"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#D2D2D2"/>
+
+        <TextView
+            android:id="@+id/adddesc"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Add Description"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:id="@+id/task_desc"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:hint="description"
+            android:background="@drawable/bgitemtask"
+            android:padding="12dp"
+            android:ems="10"
+            android:singleLine="true"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#666666"/>
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"
+            android:background="#D2D2D2"/>
+
+        <TextView
+            android:id="@+id/adddate"
+            android:textSize="18sp"
+            android:textColor="@color/colorPrimaryDark"
+            android:text="Add Date"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_marginBottom="20dp"
+            android:id="@+id/task_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:hint="date"
+            android:padding="12dp"
+            android:focusable="false"
+            android:background="@drawable/bgitemtask"
+            android:ems="10"
+            android:singleLine="true"
+            android:textColorHint="#CCCCCC"
+            android:textColor="#666666"
+            android:onClick="showStartDatePicker"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_below="@+id/inputview"
+        android:orientation="vertical"
+        android:paddingTop="10dp"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/buttonview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="7dp"
+                android:layout_toLeftOf="@+id/btnDone"
+                android:background="@drawable/bgbtndisabled"
+                android:text="Delete"
+                android:textAllCaps="false"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:enabled="false"
+                android:onClick="deleteAddTask"/>
+
+            <Button
+                android:id="@+id/btnDone"
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="14dp"
+                android:layout_marginLeft="35dp"
+                android:layout_marginRight="35dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/bgbtnsave"
+                android:text="Save"
+                android:textAllCaps="false"
+                android:textColor="#FFF"
+                android:textSize="18sp"
+                android:onClick="doneAddTask"/>
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="65dp"
+                android:layout_height="45dp"
+                android:layout_marginTop="7dp"
+                android:layout_toRightOf="@+id/btnDone"
+                android:text="Cancel"
+                android:textColor="#AFAFAF"
+                android:textAllCaps="false"
+                android:background="@drawable/bgbtncancel"
+                android:textSize="18sp"
+                android:onClick="closeAddTask"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>
